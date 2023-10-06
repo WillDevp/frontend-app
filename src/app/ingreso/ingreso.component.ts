@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cliente, ClienteResponse } from '../models/cliente.model';
+import { ClienteService } from '../service/cliente.service';
 
 
 
@@ -15,11 +16,13 @@ export class IngresoComponent {
   numero: string = '';
   pattern: string = "[0-9]{8,11}";
 
-  constructor(private router: Router,  private http: HttpClient) {}
+  constructor(private router: Router,  private http: HttpClient, private clienteService: ClienteService) {}
   onBuscar() {
     this.http.get<ClienteResponse>('/assets/data/clientes.json').subscribe((data: {clientes: Cliente[]}) => { 
       const cliente = this.findCliente(data.clientes);
       if (cliente) {
+        this.clienteService.setCliente(cliente); // Guardar el cliente en el servicio
+
         this.router.navigate(['/resumen']);
       } else {
         alert('Cliente no encontrado');

@@ -3,14 +3,16 @@
       {
         "tipo": "cedula",
         "numero": "12345678",
-        "nombre": "Wilmar Garcia",
+        "nombre": "Wilmar",
+        "apellido": "Garcia",
         "edad": 22,
         "direccion": "Calle 123, Ciudad ABC"
       },
       {
         "tipo": "pasaporte",
         "numero": "XYZ789",
-        "nombre": "Wilmar Garcia",
+        "nombre": "Wilmar",
+        "apellido": "Garcia",
         "edad": 22,
         "direccion": "Calle 123, Ciudad ABC"
       }
