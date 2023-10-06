@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { IngresoComponent } from './ingreso/ingreso.component';
 import { ResumenComponent } from './resumen/resumen.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +18,9 @@ import { ResumenComponent } from './resumen/resumen.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

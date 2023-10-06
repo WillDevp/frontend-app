@@ -1,0 +1,17 @@
+<div class="container mt-5 col-lg-3">
+  <form (ngSubmit)="onBuscar()" #form="ngForm">
+    <div class="mb-3">
+      <label for="tipo" class="form-label">Tipo de documento</label>
+      <select class="form-control" id="tipo" name="tipo" [(ngModel)]="tipo" (change)="changeValidation()" required>
+        <option value="" disabled selected>Seleccione...</option>
+        <option value="cedula">Cédula de ciudadanía</option>
+        <option value="pasaporte">Pasaporte</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="numero" class="form-label">Número de documento</label>
+      <input type="text" class="form-control" id="numero" name="numero" [(ngModel)]="numero" [pattern]="pattern" required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Buscar</button>
+  </form>
+</div>

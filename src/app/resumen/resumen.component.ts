@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resumen',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./resumen.component.css']
 })
 export class ResumenComponent {
+  constructor(private router: Router) { }
 
+  onVolver() {
+    this.router.navigate(['/ingreso']);
+  }
 }
